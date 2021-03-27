@@ -1,0 +1,15 @@
+p {
+    font-size: 1.5rem;
+}
+
+p.results {
+    font-size: 1.2rem;
+}
+
+#searchBtn {
+    padding: 0%;
+}
+
+#plotTranslate {
+    display: none;
+}

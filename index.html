@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- linked stylesheets -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <title>Movie Review</title>
+</head>
+
+<body>
+
+    <div id="container" class="tile is-ancester p-5 notification is-info is-vertical">
+
+        <!-- Movie Search input field and Submit button -->
+
+        <section class="header tile is-parent"><img src="assets/images/header-image3-01.png" style="width: 100%">
+        </section>
+        <div class="tile is-parent notification is-info is-6 ">
+            <section class="search tile is-child columns is-mobile">
+                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Title Search..." onfocus="this.value=''">
+                <button id="searchBtn" class="button column is-danger is-1">
+                    <span class="icon">
+                        <i class="fas fa-search fa-lg"></i>
+                    </span></button>
+            </section>
+        </div>
+
+        <!-- ERROR MESSAGE - triggered by "Error Message' section of JS -->
+
+        <div class="modal" id="errorModal">
+            <div class="modal-background"></div>
+            <div class="modal-content  is-size-2 is-size-4-mobile mt-6">
+
+                <div class="box has-background-danger-dark has-text-white is-text-centered" id="errorMessage"> Your
+            selection is not recognized as a movie title. Please check the spelling and try again.</div>
+
+            </div>
+
+            <button class="modal-close is-large" id="closeModal" aria-label="close"></button>
+        </div>
+
+        <!-- areas for displaying API data -->
+        <div class="tile is-parent notification">
+            <section class="poster tile is-child notification is-success is-2x3 is-5">
+                <figure class="image">
+                    <img id="thumbnail" src="assets/images/posterPlaceholderImg.png">
+                </figure>
+            </section>
+
+            <div class="info-container tile is-parent notification is-vertical">
+                <section class="movie-title tile is-child notification is-info" style="height: auto">
+                    <p class="tile is-size-6-mobile">Movie Title</p>
+                    <p id="title" class="results is-size-4-mobile"></p>
+                </section>
+                <section class="tile is-child notification is-warning">
+                    <p class="is-size-6-mobile">Date Released</p>
+                    <p id="year" class="results s-size-4-mobile"></p>
+                </section>
+                <section class="tile is-child notification is-danger">
+                    <p class="is-size-6-mobile">Ratings</p>
+                    <p id="ratings0" class="results is-size-4-mobile"></p>
+                    <p id="ratings1" class="results is-size-4-mobile"></p>
+                    <p id="ratings2" class="results is-size-4-mobile"></p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Trailer Button -->
+        <div><a id="trailer-url" class="button trailer-url is-warning" target="blank" href=""><i
+                    class="fas fa-video"></i>&nbsp;Movie Trailer</a></div><br>
+
+        <!-- plot summary -->
+
+        <section class="plot-summary tile is-child notification is-light">
+            <p>Plot Summary</p>
+            <p id="plot" class="results"></p>
+        </section>
+
+        <!-- translator section -->
+        <p class="is-size-5">Click a translator button below for a little fun:</p>
+        <section class="buttons">
+            <button id="yodaBtn" class="button is-success is-light is-size-7-mobile">Yoda</button>
+            <button id="minionBtn" class="button is-link is-light is-size-7-mobile">Minion</button>
+            <button id="pirateBtn" class="button is-warning is-light is-size-7-mobile">Pirate</button>
+            <button id="klingonBtn" class="button is-danger is-light is-size-7-mobile">Klingon</button>
+            <button id="grootBtn" class="button is-primary is-light is-size-7-mobile">Groot</button>
+        </section>
+        <section>
+            <p id="plotTranslate" class="tile notification is-light is-size-6-mobile results is-flex flex-wrap">
+            </p>
+        </section>
+    </div>
+
+    <!-- scripts -->
+    <script src="https://kit.fontawesome.com/b2dae9ee9b.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
